@@ -12,7 +12,7 @@ const Login = () => {
    <label><b>Password</b></label><br/>
    <input></input><br/>
    <button>Login</button><br/>
-   <label><input></input>Remember me</label>
+   <label>Remember me</label>
    </div>
    <div>
    <button>Cancel</button>

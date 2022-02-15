@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
-import Login from './hello/Login'
+import Grade from './hello/Grade'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <Grade />
   </React.StrictMode>,
   document.getElementById('root')
 );
