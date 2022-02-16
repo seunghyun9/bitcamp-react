@@ -12,7 +12,7 @@ const Login = () => {
    <label><b>Password</b></label><br/>
    <input></input><br/>
    <button>Login</button><br/>
-   <label>Remember me</label>
+   <label><input type = "checkbox"/>Remember me</label>
    </div>
    <div>
    <button>Cancel</button>
