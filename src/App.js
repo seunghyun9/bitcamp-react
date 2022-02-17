@@ -1,5 +1,5 @@
 import React from "react";
-import { useRoutes} from "react-router-dom";
+import {useRoutes} from "react-router-dom";
 import Home from "./pages/Home";
 import Bmi from "./components/Bmi";
 import Calc from "./components/Calc";
