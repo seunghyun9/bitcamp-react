@@ -1,6 +1,7 @@
 import React from "react";
-const Bmi = () => {
-    return <>
+import Layout from "../containers/Layout";
+export default function Bmi(){
+    return <Layout>
     <h1>
     BMI 측정기
     </h1>
@@ -16,6 +17,5 @@ const Bmi = () => {
     <button>BMI 측정</button>
     </div>
     </form>
-    </>
+    </Layout>
 }
-export default Bmi
