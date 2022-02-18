@@ -6,7 +6,6 @@ export default function Grade(){
     const [eng, setEng] = useState(0);
     const [math, setMath] = useState(0);
     const [sum, setSum] = useState(0);
-    const [avg, setAvg] = useState(0.0);
     const execute = () => {
         let name = document.getElementById('name').value
         console.log('이름 : ' + name)
@@ -20,8 +19,7 @@ export default function Grade(){
         setKor(kor)
         setEng(eng)
         setMath(math)
-        setSum(Number(kor) + Number(eng) + Number(math))
-        setAvg(Number(sum) / 3)
+        setSum("총점 : " + (Number(kor) + Number(eng) + Number(math)) + "평균 : " + (Number(kor) + Number(eng) + Number(math))/3)
     }
     return <Layout><h1>성적표</h1>
     <div>
@@ -35,8 +33,7 @@ export default function Grade(){
     <input id="math"/><br/>
     <button onClick={() => {execute()}}>합격 여부 판단</button>
     <div>{name} : 국어점수:{kor}점 / 영어점수:{eng}점 / 수학점수:{math}점</div><br/>
-    <div>총점:{sum}</div>
-    <div>평균점수:{avg}</div>
+    <div>{sum}</div>
     </div>
     </Layout>
 }
