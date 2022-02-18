@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import Layout from "../containers/Layout";
 export default function Grade(){
+    const [name, setName] = useState("");
+    const [kor, setKor] = useState(0);
+    const [eng, setEng] = useState(0);
+    const [math, setMath] = useState(0);
     return <Layout>
     <h1>
     성적표
@@ -8,13 +12,13 @@ export default function Grade(){
     <form>
     <div></div>
     <div>
-    <label><b>이름</b></label>
+    <label><b>Username</b></label>
     <input></input><br/>
-    <label><b>국어 점수</b></label>
+    <label><b>kor</b></label>
     <input></input><br/>
-    <label><b>영어 점수</b></label>
+    <label><b>eng</b></label>
     <input></input><br/>
-    <label><b>수학 점수</b></label>
+    <label><b>math</b></label>
     <input></input><br/>
     <button>합격 여부 판단</button>
     </div>

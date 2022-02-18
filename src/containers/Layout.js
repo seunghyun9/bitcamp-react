@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components"
 import Header from "./Header"
 import Footer from "./Footer";
-export default function Layout({children}){
-    return <div>
+export default function Layout({ children }){
+    return (<div>
         <Table>
             <thead>
             <Tr>
@@ -13,7 +13,7 @@ export default function Layout({children}){
             <tbody>
             <Tr>
                 <Td>
-                {children}
+                    {children}
                 </Td>
             </Tr>
             <Tr>
@@ -21,19 +21,20 @@ export default function Layout({children}){
             </Tr>
             </tbody>
         </Table>
-    </div>
+    </div>)
 }
 const Table = styled.table`
-    border : 1px solid black;
-    width : 1000px;
-    height : 500px;
+    border: 1px solid black;
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
 `
 const Tr = styled.tr`
-    border : 1px solid black
+    border: 1px solid black
 `
 const Th = styled.th`
-    border : 1px solid black
+    border: 1px solid black
 `
 const Td = styled.td`
-    border : 1px solid black
+    border: 1px solid black
 `

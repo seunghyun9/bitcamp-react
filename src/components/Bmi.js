@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import Layout from "../containers/Layout";
 export default function Bmi(){
+    const [name, setName] = useState("");
+    const [height, setHeight] = useState(0);
+    const [weight, setWeight] = useState(0);
     return <Layout>
     <h1>
     BMI 측정기
@@ -8,11 +11,11 @@ export default function Bmi(){
     <form>
     <div></div>
     <div>
-    <label><b>이름</b></label><br/>
+    <label><b>Username</b></label><br/>
     <input></input><br/>
-    <label><b>키(cm)</b></label><br/>
+    <label><b>height(cm)</b></label><br/>
     <input></input><br/>
-    <label><b>몸무게(kg)</b></label><br/>
+    <label><b>weight(kg)</b></label><br/>
     <input></input><br/>
     <button>BMI 측정</button>
     </div>
