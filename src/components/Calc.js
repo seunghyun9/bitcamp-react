@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import Layout from "../containers/Layout";
 export default function Calc(){
     const [num1, setNum1] = useState(0)
-    const [opcode, setOpcode] = useState("")
     const [num2, setNum2] = useState(0)
     const [result, setResult] = useState(0)
     const sum = () => {
