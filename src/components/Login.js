@@ -10,20 +10,42 @@ export default function Login(){
       console.log('비번 : ' + pw)
       setName(name)
       setPw(pw)
+
+   // const [inputs, setInputs] = useState({})
+   // const {name, pw} = inputs; // Object  Destructuring
+
+   // const handleChange = (e) => {
+   //      e.preventDefault()
+   //      const {value, name} = e.target;
+   //      setInputs({ ...inputs, [name]: value})
+   //  }
+   // const handleClick = (e) => {
+   //      e.preventDefault()
+   //      const loginRequest = {name, pw}
+   //      alert(` 사용자이름: ${JSON.stringify(loginRequest)}`)    
+   //  }
    }
-   return <Layout><h1>로그인</h1>
+   return (<Layout>
+   <form>
+   <h1>로그인</h1>
+   
+  
    <div>
-   <label><b>Username</b></label><br/>
-   <input id="name"/><br/>
-   <label><b>Password</b></label><br/>
-   <input id="pw"/><br/>
-   <button onClick={() => {login()}}>Login</button><br/>
-   <label><input type = "checkbox"/>Remember me</label>
+   <label><b>Username</b></label>
+   <input type="text" name="name"  /><br />
+
+   <label htmlFor=""><b>Password</b></label>
+   <input type="text" pw="pw"  /><br />
+
+   <button>Login</button><br />
+   <label><input type="checkbox" />Remember me</label><br />
    </div>
+
    <div>
-   <button>Cancel</button>
+   <button>Cancel</button><br />
    <span>Forgot <a>password?</a></span>
    </div>
-   <div>{name}님 비밀번호 {pw} 맞습니다</div>
-   </Layout>
+
+   </form>
+   </Layout>)
 }

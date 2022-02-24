@@ -3,6 +3,7 @@ import Layout from "../containers/Layout";
 export default function Calc(){
     const [num1, setNum1] = useState(0)
     const [num2, setNum2] = useState(0)
+    const [opcode, setOpcode] = useState("")
     const [result, setResult] = useState(0)
     const sum = () => {
         let num1 = document.getElementById('num1').value
