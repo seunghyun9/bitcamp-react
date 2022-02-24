@@ -24,8 +24,8 @@ export default function Bmi(){
 
 
     return (<Layout>
-        <form>
-        <h1>BMI 측정기</h1>
+    <form>
+    <h1>BMI 측정기</h1>
    
     
     <div>
