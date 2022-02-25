@@ -1,18 +1,11 @@
 import React, {useState} from "react";
+import { memberLogin } from "../api";
 import Layout from "../containers/Layout";
 export default function Login(){
-   // const [name, setName] = useState("");
-   // const [pw, setPw] = useState(0);
-   // const login = () => {
-   //    let name = document.getElementById('name').value
-   //    console.log('이름 : ' + name)
-   //    let pw = document.getElementById('pw').value
-   //    console.log('비번 : ' + pw)
-   //    setName(name)
-   //    setPw(pw)
 
    const [inputs, setInputs] = useState({})
-   const {name, pw} = inputs; // Object  Destructuring
+   const [result, setResult] = useState('')
+   const {userId, password} = inputs; 
 
    const handleChange = (e) => {
         e.preventDefault()
@@ -21,8 +14,9 @@ export default function Login(){
     }
    const handleClick = (e) => {
         e.preventDefault()
-        const loginRequest = {name, pw}
-        alert(` 사용자이름: ${JSON.stringify(loginRequest)}`)    
+        memberLogin({userId, password})
+        .then(res => setResult(res.data))
+        .catch( err => console.log(`에러발생 : ${err}`))
     }
    
    return (<Layout>
@@ -31,11 +25,11 @@ export default function Login(){
    
   
    <div>
-   <label><b>Username</b></label>
-   <input type="text" name="name" onChange={handleChange}  /><br />
+   <label><b>UserId</b></label>
+   <input type="text" name="userId" onChange={handleChange}  /><br />
 
    <label htmlFor=""><b>Password</b></label>
-   <input type="text" name="pw" onChange={handleChange}  /><br />
+   <input type="text" name="password" onChange={handleChange}  /><br />
 
    <button onClick={handleClick}>Login</button><br />
    <label><input type="checkbox" />Remember me</label><br />
@@ -45,6 +39,7 @@ export default function Login(){
    <button>Cancel</button><br />
    <span>Forgot <a>password?</a></span>
    </div>
+   <div>{result}</div>
 
    </form>
    </Layout>)

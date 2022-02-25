@@ -4,6 +4,7 @@ import Layout from '../containers/Layout';
 export default function Bmi(){
 
     const [inputs, setInputs] = useState({})
+    const [result, setResult] = useState('')
     const {name, weight, height} = inputs; // Object  Destructuring
 
     const handleChange = (e) => {
@@ -13,13 +14,9 @@ export default function Bmi(){
     }
     const handleClick = (e) => {
         e.preventDefault()
-        const bmiRequest = {name, height, weight}
-        console.log(` 사용자이름: ${JSON.stringify(bmiRequest)}`)
-        memberBmi(bmiRequest)
-        .then(res => {
-            alert(res.data)
-        })
-        .catch(err => console.log('에러발생 : ${err)'))    
+        memberBmi({name, height, weight})
+        .then(res => setResult(res.data))
+        .catch( err => console.log(`에러발생 : ${err}`)) 
     }
     
     return (<Layout>
@@ -39,6 +36,7 @@ export default function Bmi(){
 
     <button onClick={handleClick}>BMI 측정</button>
     </div> 
+    <div>BMI 측정결과 : {result}</div>
     
     </form>
     </Layout>)
