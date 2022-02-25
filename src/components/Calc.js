@@ -17,43 +17,41 @@ export default function Calc(){
     // }
 
     const [inputs, setInputs] = useState({})
-    const {num1, num2, res} = inputs; // Object  Destructuring
+    const {num1, opcode, num2} = inputs; // Object  Destructuring
 
     const handleChange = (e) => {
         e.preventDefault()
         const {value, name} = e.target;
         setInputs({ ...inputs, [name]: value})
     }
-
     const handleClick = (e) => {
         e.preventDefault()
-        const calcRequest = {num1, num2}
+        const calcRequest = {num1, opcode, num2}
         alert(`계산결과: ${JSON.stringify(calcRequest)}`)    
     }
+
     return <Layout>
     <form>
     <h1>계산기</h1>
-
 
     <div>
     <label><b>num1</b></label>
     <input type="text" name="num1" onChange={handleChange} /><br />
 
     <label htmlFor=""><b>opcode</b></label>
-    <select name="" id="">
-        <option value="">+</option>
-        <option value="">-</option>
-        <option value="">*</option>
-        <option value="">/</option>
-        <option value="">%</option>
+    <select name="opcode" onChange={handleChange}>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
     </select>
     <br />
 
     <label htmlFor=""><b>num2</b></label>
     <input type="text" name="num2" onChange={handleChange} /><br />
 
-    <button onClick={handleClick}>더하기 실행</button>
-    <div>결과: <input type="text" name="res" onChange={handleChange} /></div>
+    <button onClick={handleClick}>계산실행</button>
 
     </div>
     </form>

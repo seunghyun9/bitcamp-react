@@ -51,7 +51,7 @@ export default function Grade(){
             <label htmlFor=""><b>math score</b></label>
             <input type="text" name="math" onChange={handleChange} /><br />
 
-            <button onClick={handleClick}>계산</button>
+            <button onClick={handleClick}>성적결과</button>
         </div>
     </form>
     </Layout>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react' 
+import { memberBmi } from '../api/index';
 import Layout from '../containers/Layout';
-import axios  from 'axios';
 export default function Bmi(){
 
     const [inputs, setInputs] = useState({})
@@ -14,15 +14,14 @@ export default function Bmi(){
     const handleClick = (e) => {
         e.preventDefault()
         const bmiRequest = {name, height, weight}
-        alert(` 사용자이름: ${JSON.stringify(bmiRequest)}`)    
-        // axios.get(`http://localhost:8080/member/bmi/한성수/175.5/63.5`)
-        //     .then((res)=>{
-        //         alert(`답장이 도착했습니다 [내용] ${JSON.stringify(res.data)}`)
-        //     })
+        console.log(` 사용자이름: ${JSON.stringify(bmiRequest)}`)
+        memberBmi(bmiRequest)
+        .then(res => {
+            alert(res.data)
+        })
+        .catch(err => console.log('에러발생 : ${err)'))    
     }
     
-
-
     return (<Layout>
     <form>
     <h1>BMI 측정기</h1>
