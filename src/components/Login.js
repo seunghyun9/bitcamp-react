@@ -31,12 +31,12 @@ export default function Login(){
    <label htmlFor=""><b>Password</b></label>
    <input type="text" name="password" onChange={handleChange}  /><br />
 
-   <button onClick={handleClick}>Login</button><br />
+   <button onClick={handleClick}>Login</button>
+   <button>Cancel</button><br />
    <label><input type="checkbox" />Remember me</label><br />
    </div>
 
    <div>
-   <button>Cancel</button><br />
    <span>Forgot <a>password?</a></span>
    </div>
    <div>{result}</div>
